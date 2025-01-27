@@ -1,0 +1,10 @@
+@echo off
+set count=5
+set interval=5
+
+for /L %%i in (1,1,%count%) do (
+    powershell -command "$wshell = New-Object -ComObject wscript.shell; $wshell.SendKeys('{PRTSC}')"
+    timeout /t %interval% /nobreak >nul
+)
+
+exit
